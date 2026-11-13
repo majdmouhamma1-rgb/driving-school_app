@@ -1,0 +1,198 @@
+
+final List<Map<String, dynamic>> questions = [
+  {
+    'image': 'sign-025.png',
+    'question': 'What does this sign mean?',
+    'answers': ['Give way', 'Stop completely', 'No entry', 'No parking'],
+    'correct': 'Stop completely',
+  },
+  {
+    'image': 'sign-027.png',
+    'question': 'What does this sign mean?',
+    'answers': ['No entry', 'One-way road', 'No parking', 'Stop'],
+    'correct': 'No entry',
+  },
+  {
+    'image': 'sign-029.png',
+    'question': 'What does this sign indicate?',
+    'answers': [
+      'Minimum speed 30',
+      'Maximum speed 30 km/h',
+      'Distance 30 km',
+      'Parking for 30 minutes',
+    ],
+    'correct': 'Maximum speed 30 km/h',
+  },
+  {
+    'image': 'sign-022.png',
+    'question': 'What does this sign mean?',
+    'answers': ['Stop', 'Give way', 'No entry', 'Priority road'],
+    'correct': 'Give way',
+  },
+  {
+    'image': 'sign-085.png',
+    'question': 'What does this sign indicate?',
+    'answers': ['No parking', 'Parking area', 'Bus stop', 'Hospital'],
+    'correct': 'Parking area',
+  },
+  {
+    'image': 'sign-064.png',
+    'question': 'What does this sign mean?',
+    'answers': [
+      'No stopping',
+      'No overtaking',
+      'No pedestrians',
+      'No entry',
+    ],
+    'correct': 'No stopping',
+  },
+  {
+    'image': 'sign-063.png',
+    'question': 'What does this sign mean?',
+    'answers': [
+      'No parking',
+      'No stopping',
+      'Parking allowed',
+      'One-way road',
+    ],
+    'correct': 'No parking',
+  },
+  {
+    'image': 'sign-044.png',
+    'question': 'What does this sign indicate?',
+    'answers': [
+      'Turn left only',
+      'Turn right only',
+      'No right turn',
+      'Road closed',
+    ],
+    'correct': 'Turn right only',
+  },
+  {
+    'image': 'sign-055.png',
+    'question': 'What does this sign mean?',
+    'answers': [
+      'No U-turn',
+      'No left turn',
+      'Roundabout',
+      'One-way road',
+    ],
+    'correct': 'No U-turn',
+  },
+  {
+    'image': 'sign-065.png',
+    'question': 'What does this sign indicate?',
+    'answers': [
+      'Go straight ahead',
+      'No entry',
+      'Turn right',
+      'Give way',
+    ],
+    'correct': 'Go straight ahead',
+  },
+  {
+    'image': 'sign-077.png',
+    'question': 'What does this sign indicate?',
+    'answers': [
+      'No pedestrians',
+      'Pedestrian crossing',
+      'School bus stop',
+      'No parking',
+    ],
+    'correct': 'Pedestrian crossing',
+  },
+  {
+    'image': 'sign-014.png',
+    'question': 'What does this sign warn about?',
+    'answers': [
+      'Pedestrian crossing ahead',
+      'No pedestrians',
+      'Parking area',
+      'One-way road',
+    ],
+    'correct': 'Pedestrian crossing ahead',
+  },
+  {
+    'image': 'sign-034.png',
+    'question': 'What does this sign mean?',
+    'answers': [
+      'Bicycles prohibited',
+      'Bicycle lane',
+      'Parking for bicycles',
+      'Bicycle crossing ahead',
+    ],
+    'correct': 'Bicycles prohibited',
+  },
+  {
+    'image': 'sign-028.png',
+    'question': 'What does this sign mean?',
+    'answers': [
+      'No overtaking',
+      'No parking',
+      'Two-way traffic',
+      'Priority road',
+    ],
+    'correct': 'No overtaking',
+  },
+  {
+    'image': 'sign-013.png',
+    'question': 'What does this sign mean?',
+    'answers': ['Priority road', 'Stop', 'Give way', 'No entry'],
+    'correct': 'Priority road',
+  },
+  {
+    'image': 'sign-000.png',
+    'question': 'What does this sign warn about?',
+    'answers': [
+      'Speed bump ahead',
+      'Slippery road',
+      'Road closed',
+      'No parking',
+    ],
+    'correct': 'Speed bump ahead',
+  },
+  {
+    'image': 'sign-001.png',
+    'question': 'What does this sign warn about?',
+    'answers': [
+      'Dangerous bend to the right',
+      'Dangerous bend to the left',
+      'Roundabout',
+      'No right turn',
+    ],
+    'correct': 'Dangerous bend to the right',
+  },
+  {
+    'image': 'sign-005.png',
+    'question': 'What does this sign warn about?',
+    'answers': [
+      'Slippery road',
+      'No overtaking',
+      'Road closed',
+      'Parking area',
+    ],
+    'correct': 'Slippery road',
+  },
+  {
+    'image': 'sign-008.png',
+    'question': 'What does this sign warn about?',
+    'answers': [
+      'One-way road',
+      'Two-way traffic',
+      'No entry',
+      'Road closed',
+    ],
+    'correct': 'Two-way traffic',
+  },
+  {
+    'image': 'sign-019.png',
+    'question': 'What does this sign warn about?',
+    'answers': [
+      'Falling rocks',
+      'Speed bump',
+      'Slippery road',
+      'Pedestrian crossing',
+    ],
+    'correct': 'Falling rocks',
+  },
+];
