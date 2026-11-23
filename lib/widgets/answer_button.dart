@@ -1,5 +1,5 @@
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class AnswerButton extends StatelessWidget {
   final String text;
@@ -22,71 +22,51 @@ class AnswerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color background = Colors.white;
-    Color border = const Color(0xFFE2E8F0);
-    Color foreground = const Color(0xFF0F172A);
+    Color border = const Color(0xFFDBE3EF);
 
     if (answered && isCorrect) {
       background = const Color(0xFFDCFCE7);
-      border = const Color(0xFF22C55E);
-      foreground = const Color(0xFF166534);
+      border = Colors.green;
     } else if (answered && isSelected) {
       background = const Color(0xFFFEE2E2);
-      border = const Color(0xFFEF4444);
-      foreground = const Color(0xFF991B1B);
+      border = Colors.red;
+    } else if (isSelected) {
+      background = const Color(0xFFDBEAFE);
+      border = const Color(0xFF2563EB);
     }
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
-      child: Material(
-        color: background,
-        borderRadius: BorderRadius.circular(16),
-        child: InkWell(
-          onTap: answered ? null : onPressed,
-          borderRadius: BorderRadius.circular(16),
-          child: Container(
+      child: SizedBox(
+        width: double.infinity,
+        child: OutlinedButton(
+          onPressed: answered ? null : onPressed,
+          style: OutlinedButton.styleFrom(
+            backgroundColor: background,
+            disabledBackgroundColor: background,
+            foregroundColor: const Color(0xFF0F172A),
+            disabledForegroundColor: const Color(0xFF0F172A),
             padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              border: Border.all(color: border, width: 1.5),
+            side: BorderSide(color: border),
+            shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
-            child: Row(
-              children: [
-                CircleAvatar(
-                  radius: 18,
-                  backgroundColor: border,
-                  child: Text(
-                    letter,
-                    style: TextStyle(
-                      color: answered && (isCorrect || isSelected)
-                          ? foreground
-                          : const Color(0xFF475569),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+          ),
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 17,
+                backgroundColor: const Color(0xFFE2E8F0),
+                child: Text(letter),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  text,
+                  textAlign: TextAlign.start,
                 ),
-                const SizedBox(width: 14),
-                Expanded(
-                  child: Text(
-                    text,
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                      color: foreground,
-                    ),
-                  ),
-                ),
-                if (answered && isCorrect)
-                  const Icon(
-                    Icons.check_circle,
-                    color: Color(0xFF16A34A),
-                  ),
-                if (answered && isSelected && !isCorrect)
-                  const Icon(
-                    Icons.cancel,
-                    color: Color(0xFFDC2626),
-                  ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
