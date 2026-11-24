@@ -17,17 +17,25 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final int percentage =
-        total == 0 ? 0 : ((score / total) * 100).round();
+    int percentage = ((score / total) * 100).round();
 
-    final bool passed = percentage >= 70;
+    String message = 'Keep Practicing!';
+    String emoji = '📚';
+    String result = 'You Did Not Pass';
+    Color resultColor = Colors.red;
+
+    if (percentage >= 70) {
+      message = 'Congratulations!';
+      emoji = '🏆';
+      result = 'You Passed!';
+      resultColor = Colors.green;
+    }
 
     return Center(
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Container(
-          width: double.infinity,
-          constraints: const BoxConstraints(maxWidth: 450),
+          width: 450,
           padding: const EdgeInsets.all(28),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -37,49 +45,58 @@ class ResultScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                passed ? '🏆' : '📚',
+                emoji,
                 style: const TextStyle(fontSize: 65),
               ),
+
               const SizedBox(height: 15),
+
               Text(
-                passed ? 'Congratulations!' : 'Keep Practicing!',
+                message,
                 style: const TextStyle(
                   fontSize: 27,
                   fontWeight: FontWeight.bold,
                 ),
               ),
+
               const SizedBox(height: 20),
+
               Text(
                 '$percentage%',
                 style: TextStyle(
                   fontSize: 55,
                   fontWeight: FontWeight.bold,
-                  color: passed ? Colors.green : Colors.red,
+                  color: resultColor,
                 ),
               ),
+
               const SizedBox(height: 10),
+
               Text(
                 'You answered $score out of $total questions correctly.',
                 textAlign: TextAlign.center,
               ),
+
               const SizedBox(height: 20),
+
               Text(
-                passed ? 'You Passed!' : 'You Did Not Pass',
+                result,
                 style: TextStyle(
                   fontSize: 20,
+                  color: resultColor,
                   fontWeight: FontWeight.bold,
-                  color: passed ? Colors.green : Colors.red,
                 ),
               ),
+
               const SizedBox(height: 30),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: onRestart,
-                  child: const Text('Try Again'),
-                ),
+
+              ElevatedButton(
+                onPressed: onRestart,
+                child: const Text('Try Again'),
               ),
+
               const SizedBox(height: 12),
+
               TextButton(
                 onPressed: onHome,
                 child: const Text('Back to Home'),
