@@ -45,11 +45,9 @@ class DrivingPage extends StatefulWidget {
 class _DrivingPageState extends State<DrivingPage> {
   int page = 0;
   int score = 0;
-  int quizNumber = 0;
 
   void startQuiz() {
     setState(() {
-      quizNumber++;
       page = 1;
     });
   }
@@ -67,6 +65,21 @@ class _DrivingPageState extends State<DrivingPage> {
     });
   }
 
+  Widget showPage() {
+    if (page == 0) {
+      return HomeScreen(onStart: startQuiz);
+    } else if (page == 1) {
+      return QuizScreen(onFinish: finishQuiz);
+    } else {
+      return ResultScreen(
+        score: score,
+        total: 10,
+        onRestart: startQuiz,
+        onHome: goHome,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,19 +90,7 @@ class _DrivingPageState extends State<DrivingPage> {
         ),
         centerTitle: true,
       ),
-      body: switch (page) {
-        0 => HomeScreen(onStart: startQuiz),
-        1 => QuizScreen(
-            key: ValueKey(quizNumber),
-            onFinish: finishQuiz,
-          ),
-        _ => ResultScreen(
-            score: score,
-            total: 10,
-            onRestart: startQuiz,
-            onHome: goHome,
-          ),
-      },
+      body: showPage(),
     );
   }
 }
