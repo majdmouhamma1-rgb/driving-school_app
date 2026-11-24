@@ -22,17 +22,11 @@ class AnswerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color background = Colors.white;
-    Color border = const Color(0xFFDBE3EF);
 
     if (answered && isCorrect) {
-      background = const Color(0xFFDCFCE7);
-      border = Colors.green;
+      background = Colors.green.shade100;
     } else if (answered && isSelected) {
-      background = const Color(0xFFFEE2E2);
-      border = Colors.red;
-    } else if (isSelected) {
-      background = const Color(0xFFDBEAFE);
-      border = const Color(0xFF2563EB);
+      background = Colors.red.shade100;
     }
 
     return Padding(
@@ -44,30 +38,11 @@ class AnswerButton extends StatelessWidget {
           style: OutlinedButton.styleFrom(
             backgroundColor: background,
             disabledBackgroundColor: background,
-            foregroundColor: const Color(0xFF0F172A),
-            disabledForegroundColor: const Color(0xFF0F172A),
+            foregroundColor: Colors.black,
+            disabledForegroundColor: Colors.black,
             padding: const EdgeInsets.all(16),
-            side: BorderSide(color: border),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
           ),
-          child: Row(
-            children: [
-              CircleAvatar(
-                radius: 17,
-                backgroundColor: const Color(0xFFE2E8F0),
-                child: Text(letter),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Text(
-                  text,
-                  textAlign: TextAlign.start,
-                ),
-              ),
-            ],
-          ),
+          child: Text('$letter. $text'),
         ),
       ),
     );
